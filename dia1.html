@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dia1.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+<link rel="stylesheet" href="file:///Users/ivan/Documents/formacionQuicksight/md.css" type="text/css">
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="quicksight">Quicksight</h1>
+<h2 id="introducci%C3%B3n-a-aws-quicksight">Introducción a AWS QuickSight</h2>
+<ul>
+<li>Conceptos básicos y características principales</li>
+<li>Integración con el ecosistema de AWS</li>
+<li>Beneficios y casos de uso</li>
+</ul>
+<h2 id="preparaci%C3%B3n-y-transformaci%C3%B3n-de-datos">Preparación y Transformación de Datos</h2>
+<ul>
+<li>Conexión con fuentes de datos (S3, RDS, Redshift, Athena, entre otras.)</li>
+<li>Limpieza y transformación de datos</li>
+<li>Creación de datasets</li>
+</ul>
+<h2 id="visualizaciones-b%C3%A1sicas">Visualizaciones Básicas</h2>
+<ul>
+<li>Uso de gráficos y tablas en QuickSight</li>
+<li>Tipos de visualizaciones disponibles</li>
+<li>Personalización de gráficos y elementos visuales</li>
+</ul>
+<h2 id="an%C3%A1lisis-avanzado-y-predictivo">Análisis Avanzado y Predictivo</h2>
+<ul>
+<li>Uso de “ML Insights” para predicciones automáticas</li>
+<li>Creación de métricas y KPI personalizados</li>
+<li>Incorporación de análisis predictivo en los informes</li>
+</ul>
+<h2 id="creaci%C3%B3n-de-dashboards-y-reportes-interactivos">Creación de Dashboards y Reportes Interactivos</h2>
+<ul>
+<li>Diseño de dashboards personalizados</li>
+<li>Uso de filtros y controles interactivos</li>
+<li>Publicación y compartición de dashboards</li>
+</ul>
+<h2 id="colaboraci%C3%B3n-y-automatizaci%C3%B3n">Colaboración y Automatización</h2>
+<ul>
+<li>Compartir informes con equipos y usuarios finales</li>
+<li>Configuración de alertas y reportes automáticos</li>
+<li>Integración con otras herramientas de BI y plataformas externas.</li>
+</ul>
+<hr>
+<p>Seguridad del dato en QuickSight
+Monitorización</p>
+<hr>
+<h1 id="quicksight">Quicksight</h1>
+<p>Herramienta de Business Intelligence de AWS.</p>
+<h2 id="business-intelligence">Business Intelligence</h2>
+<hr>
+<h1 id="palabrotas-en-el-mundo-del-dato">Palabrotas en el mundo del dato:</h1>
+<ul>
+<li>BBDD: Programas y los datos que gestionan esos programas en los entornos de PRODUCCIÓN de una empresa
+v
+ETL: Proceso de extraer datos de una fuente, transformarlos y cargarlos en otra fuente.
+Procesos online
+Procesos batch
+Hay muchas variantes de proceso ETL:
+ETL: Extraer, Transformar, Cargar
+ELT: Extraer, Cargar, Transformar
+ETLT: Extraer, Transformar, Cargar, Transformar
+TELT: Transformar, Extraer, Cargar, Transformar
+v
+Hay poca T... en las ETLs.. guardamos los datos bastante en bruto.
+v</li>
+<li>Datalake: Es un almacén de datos (muchas veces lo implementamos con un programa de BBDD) históricos y no pensado para la actualización de los datos. Guarda datos en bruto.
+v
+ETL: La T es muy fuerte
+v</li>
+<li>Datawarehouse: Es un almacén de datos históricos, no preparado para su actualización. Pero con una diferencia con respecto al datalake... LOS GUARDO YA CON UN PROPOSITO muy concreto.
+Muchas veces también usamos programas de gestión de BBDD para almacenar los datos, pero los configuramos de otra forma... y los modelos de datos que montamos son muy diferentes a los de una BBDD de producción (muy orientada a la actualización de los datos)</li>
+</ul>
+<p>Los datos cumplen una función principal.. inherente al dato.
+En ocasiones, podemos usar esos datos para otro tipo de funciones.</p>
+<p>| - Business Intelligence   Toma de decisiones informadas (basadas en datos) dentro de la empresa
+|                           Es la forma más básica de análisis del dato.
+|                           Aplicamos técnicas de estadística descriptiva (nivel instituto)
+|                           - Se analiza variable a variable y <strong>correlaciones entre variables</strong>
+|                           El problema del estudio de relaciones entre datos que hacemos en BI es que
+|                           lo hacemos los humanos... y nuestro cerebro está muy limitado
+|                           (nos da para pensar en 3/4 variables máximo)
+|                           Lo que vamos a querer es usar datos pasados para tomar decisiones
+|                           (a día de hoy o de cara al futuro)
+|                           - Eso es hacer una predicción: De entrada supongo que el mundo seguirá igual!
+|                             Lo que me ofrecen los datos es la capacidad de TASAR la probabilidad de
+|                             cometer un error...  (para limitarla)
+|                             (ojo... siempre y cuando, el mundo siga igual.. que ya es mucho suponer)
+|                           Aquí entra el mundo de la estadística INFERENCIAL
+-----.-----.-----.-----.-----.----- ^^^ como mucho 3/4 variables a la vez en un análisis
+-----.-----.-----.-----.-----.----- vvv a partir de 4/5 variables... hasta decenas o incluso cientos/miles
+| - Data mining             Es cuando queremos buscar relaciones complejas NO EVIDENTES
+|                           entre las variables. NO SE A PRIORI NI LO QUE BUSCO NI LO QUE VOY A ENCONTRAR
+| - Machine learning        Trata de aprender de los datos y hacer predicciones a futuro
+|                           - Predecir un dato
+|                           - Clasificar un sujeto
+|                           - ...
+v
+Por orden de complejidad en el análisis de los datos.</p>
+<ul>
+<li>Bigdata
+<ul>
+<li>Un volumen &quot;grande&quot; de datos.
+<ul>
+<li>1 millón de datos es grande?</li>
+<li>10 millones de datos es grande?</li>
+<li>100 millón de datos es grande?</li>
+<li>1000 millón de datos es grande?</li>
+<li>100000 millón de datos es grande?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Dónde pongo el corte???</p>
+<p>El concepto de bigdata es:
+Cuando tengo que hacer un trabajo (el que sea) con datos y las técnicas (herramientas de software, computadoras) que hay a mi disposición y que hemos usado tradicionalmente dejan de servirme... tengo un problema.
+Y entonces busco soluciones alternativas. Los primeros que hicieron esto fue la gente de Google.</p>
+<p>Se basa en utilizar granjas de computadoras pequeñas (commodity hardware) y hacer que trabajen como si fueran una. Para qué?</p>
+<p>Trabajo el que sea:</p>
+<ul>
+<li>Almacenar un dato</li>
+<li>Analizar un dato</li>
+<li>Transmitir un dato</li>
+<li>...</li>
+</ul>
+<hr>
+<p>4 jugadores:
+1 jugador en una partida puede hacer fácilmente 2 movimientos por segundo.
+De su teléfono deben salir mensajes que al final lleguen a los teléfonos de los otros participantes.
+2 mensajes por segundo... por persona... somo somos 4 jugando: 24 mensajes por segundo.
+Mis 2 mensajes emitidos, se convierten en 6 mensajes recibidos.
+Si tenemos en cuenta que durante muchos años fué el juego más juagdo de Apple Store... y de Google play... y que un momento dado podía haber más de 50k partidas en paralelo a nivel mundial:
+50k * 24 = 1.2 millones de mensajes por segundo.
+Qué computadora es capaz de procesar tal cantidad de mensajes por segundo? NO EXISTE</p>
+<hr>
+<p>Si tengo un pincho USB de 16 Gbs... vacío... recién sacado de la caja.. y quiero guardar en él un fichero de 5Gbs, puedo? Depende del formato.
+FAT16/FAT32... no entra, aunque haya espacio disponible TOTAL
+NTFS, EXT4.... ahí si... pero incluso esos formatos tienen un límite.
+Si quiero guardar un fichero de 2Pbs... no puedo... no hay formato tradicional que lo soporte.</p>
+
+</body>
+</html>
