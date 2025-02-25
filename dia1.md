@@ -428,7 +428,7 @@ Pero siempre me tocará hacerle retoques específicos a las preguntas que quiera
         Ventas por persona que hago en cada comunidad autónoma
             Ventas globales por comunidad --> Ventas / Población ---> Ventas por persona
             Población de cada comunidad
-            
+
 - Tratamiento de VALORES PERDIDOS / AUSENTES
 
     Qué pasa si un dato no lo tengo en una columna de mi tabla?... que hago con el registro?
