@@ -151,3 +151,117 @@ Y aquí entran las peculiaridades de cada herramienta.
     - Eso si... con un coste de almacenamiento mayor.
 
 Puede ser que necesite de antemano restar 1 al año... para crear la columna: Año de referencia
+
+
+alumno1 - 
+alumno2 - Ibon
+alumno3 - Anton
+alumno4 - Barbara
+alumno5 - Carlos
+alumno6 - Cristina
+alumno7 - Daniel
+alumno8 - Elena
+alumno9 - Esther
+alumno10 - Manuel
+alumno11 - Miguel
+alumno12 - Olivia
+alumno13 - Rosa
+alumno14 - Sandra
+alumno15 - Soledad
+
+---
+
+Tabla de videojuegos... con las ventas puntuales que se han hecho a lo largo del tiempo
+8.800.000.000 de registros.
+Esto estará en algún sitio: DATALAKE
+    vvvv
+    ETL donde haré la agregación (TABLA_VENTAS_POR_AÑO)
+    vvvv
+    DATAWAREHOUSE (datos agregados por juego/plataforma)
+    vvvv
+    ETL (puedo programar en el tiempo) agregar aquí por años.
+    vvvv
+    QUICKSIGHT (SPICE como Datawarehouse)
+    Conjunto de datos < Preparación de datos
+
+
+Análisis: Parto de unos DATOS
+
+* Si los análisis que quiero hacer siempre van agregados por año.
+
+---
+
+
+
+                                                    Qué puedo obtener?
+Nombre              Nominal                             MODA (juego con más plataformas)
+Plataforma          Nominal                             MODA (plataforma con más juegos)
+Año                 Cuantitativo: Intervalo             MODA (año con más juegos)
+                                                        MEDIANA (año que antes de él y después de él se publicaron la misma cantidad de juegos)
+                                                        MEDIA (año promedio de publicación de juegos ???)
+                                                        MAXIMO** \
+                                                        MINIMO** / RANGO de estudio
+                                                        SUMA
+Genero              Nominal                             MODA (género con más juegos)
+Editorial           Nominal                             MODA (editorial con más juegos)          
+
+Número de Ventas NA           Cuantitativos: Razón                MEDIA, MEDIANA, MAXIMO, MINIMO, SUMA
+    ^ FREQ
+Número de Ventas EU           Cuantitativos: Razón
+    ^ FREQ
+Número de Ventas JP           Cuantitativos: Razón
+    ^ FREQ
+Número de Ventas Otros        Cuantitativos: Razón
+    ^ FREQ
+Número de Ventas Global       Cuantitativos: Razón
+    ^ FREQ
+
+
+Genero -> Sector (o anillo)
+Lo que estoy representando es la FRECUENCIA de la variable género en mi dataset.
+Es decir, en cuantas lineas aparece esa variable.
+ESTO TENDRIA SENTIDO SI TRABAJO CON UN DATASET SIN AGRUPAR PREVIAMENTE (8 millardos de datos)
+    En este caso, en ese gráfico que veríamos? Número de ventas (Freq) por género
+
+En nuestro caso, tenemos un dataset AGRUPADO, donde cada linea no representa una venta... sino?
+La que he tengo es el recuento de ventas para un juego concreto en una plataforma
+    Lo que tendríamos que hacer es CADA FILA no contarla 1 vez... sino contarla como si tuvieramos en realidad en el dataset Número de Ventas
+
+Recuento sería el número de lineas (registros) donde aparecía un valor.
+La suma es que sumo datos.
+
+----
+Hasta ahora hemos pintado gráficos con 1 variable!
+    Genero          x Ventas
+    Plataforma      x Ventas
+    Año             x Ventas
+---
+Vamos a por 2 variables
+    Genero x plataforma x Ventas
+
+    Mi interés es saber si en distintas plataformas (consolas) los jugadores tienden a unos u otros tipos de juego (géneros)
+
+    Nominal x Nominal = Barras (agrupadas | apiladas)
+        Valores RELATIVOS u absolutos.
+        Apiladas
+
+    Quiero ver en qué plataformas se juega más a juegos de acción
+        FILTRO: Género = Acción
+
+---
+
+Quiero meter la variable Tiempo arriba:
+
+Quiero mirar si hay un cambio de tendencia en lo que a los jugadores les gusta jugar en cada plataforma.
+    Genero x Plataforma x Año x Ventas
+     12    x  20     x 40  = 9600 datos
+
+Quiero ver evolución... Variable principal es: Año: CUANTITATIVA -> Nosotros estamos haciendo un uso ORDINAL de ella.
+    Lineas -> Areas
+    *Histograma
+    *Boxplot
+
+    Y en todos ellos, meter 3 variables... ME PARTO EL CULO !!!
+
+
+Ventas que he tenido agregadas por plataforma y año

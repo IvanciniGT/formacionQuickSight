@@ -326,6 +326,16 @@ En ese acaso no hago un estudio de 800 variables entre si... sino un estudio de 
                     Hay una relación entre estar en el médico y el sexo.
                     En el resto de casos no hay relación.
 
+
+                                Hombre    |    Mujer
+                    BUS         50%       |    50%
+                    TREN        50%       |    50%
+                    TIENDA      50%       |    50%
+                    MEDICO      50%       |    50%
+
+
+
+
         En estadística están los coeficientes de correlación: Chi-cuadrado -> Coef. Phi, V de Cramer
 
         Esas variables que he puesto... de qué tipo son? cualitativas / nominales
