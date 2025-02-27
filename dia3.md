@@ -273,22 +273,4 @@ El problema es que existe lo que en estadística llamamos una VARIBLE MEDIADORA.
 
     Si tengo una variable mediadora... y hago un estudio de correlación entre las variables... me va a dar que la altura influye en los conocimientos de matemáticas... y no es así.
 
-    Si tengo una variable mediadora... y hago un estudio de correlación entre las variables... me va a dar que la altura influye en los conocimientos de matemáticas... y no es así.
 
-    Si tengo una variable mediadora... y hago un estudio de correlación entre las variables... me va a dar que la altura influye en los conocimientos de matemáticas... y no es así.
-
-    Si tengo una variable mediadora... y hago un estudio de correlación entre las variables... me va a dar que la altura influye en los conocimientos de matemáticas... y no es así.
-
-    Si tengo una variable mediadora... y hago un estudio de correlación entre las variables... me va a dar que la altura influye en los conocimientos de matemáticas... y no es así.
-
-    Si tengo una variable mediadora... y hago un estudio de correlación entre las variables... me va a dar que la altura influye en los conocimientos de matemáticas... y no es así.
-
-    Si tengo una variable mediadora... y hago un estudio de correlación entre las variables... me va a dar que la altura influye en los conocimientos de matemáticas... y no es así.
-
-    Si tengo una variable mediadora... y hago un estudio de correlación entre las variables... me va a dar que la altura influye en los conocimientos de matemáticas... y no es así.
-
-    Si tengo una variable mediadora... y hago un estudio de correlación entre las variables... me va a dar que la altura influye en los conocimientos de matemáticas... y no es así.
-
-    Si tengo una variable mediadora... y hago un estudio de correlación entre las variables... me va a dar que la altura influye en los conocimientos de matemáticas... y no es así.
-
-    Si tengo una variable mediadora... y hago un estudio de correlación entre las variables... me va a dar que la altura influye
